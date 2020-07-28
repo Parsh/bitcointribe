@@ -1,4 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
+const { SocksProxyAgent } = require('socks-proxy-agent');
+const agent = new SocksProxyAgent('socks5h://127.0.0.1:9050');
 import config from '../bitcoin/HexaConfig';
 const { RELAY, SIGNING_SERVER, REQUEST_TIMEOUT } = config;
 const URL = '';
@@ -28,3 +30,9 @@ export function setApiHeaders({ appVersion, appBuildNumber }) {
 }
 
 
+
+
+export const torApi = axios.create({
+    url: 'https://ifconfig.me',
+    httpsAgent: agent,
+})
