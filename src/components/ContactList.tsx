@@ -19,7 +19,7 @@ import {
 import { RFValue } from 'react-native-responsive-fontsize';
 import RadioButton from '../components/RadioButton';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import * as ExpoContacts from 'expo-contacts';
+// import * as ExpoContacts from 'expo-contacts';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Contacts from 'react-native-contacts';
 import { AppBottomSheetTouchableWrapper } from './AppBottomSheetTouchableWrapper';
@@ -84,26 +84,26 @@ export default function ContactList(props) {
     }
   }
 
-
-  const getContact = () => {
-    ExpoContacts.getContactsAsync().then(async ({ data }) => {
-      if (!data.length) {
-        //Alert.alert('No contacts found!');
-        setErrorMessage('No contacts found. Please add contacts to your Address Book and try again');
-        (contactListErrorBottomSheet as any).current.snapTo(1);
-      }
-      setContactData(data);
-      await AsyncStorage.setItem('ContactData', JSON.stringify(data));
-      const contactList = data.sort(function (a, b) {
-        if (a.name && b.name) {
-          if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
-          if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
-        }
-        return 0;
-      });
-      setFilterContactData(contactList);
-    });
-  }
+  // TODO: Migrate it using react-native-contact
+  // const getContact = () => {
+  //   ExpoContacts.getContactsAsync().then(async ({ data }) => {
+  //     if (!data.length) {
+  //       //Alert.alert('No contacts found!');
+  //       setErrorMessage('No contacts found. Please add contacts to your Address Book and try again');
+  //       (contactListErrorBottomSheet as any).current.snapTo(1);
+  //     }
+  //     setContactData(data);
+  //     await AsyncStorage.setItem('ContactData', JSON.stringify(data));
+  //     const contactList = data.sort(function (a, b) {
+  //       if (a.name && b.name) {
+  //         if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+  //         if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+  //       }
+  //       return 0;
+  //     });
+  //     setFilterContactData(contactList);
+  //   });
+  // }
 
   const getContactsAsync = async () => {
     if (Platform.OS === 'android') {
@@ -114,7 +114,8 @@ export default function ContactList(props) {
         setContactPermissionAndroid(false);
         return;
       } else {
-        getContact();
+        // TODO: Migrate it using react-native-contact
+        // getContact();
       }
     } else if (Platform.OS === 'ios') {
       const { status, expires, permissions } = await Permissions.getAsync(Permissions.CONTACTS);
@@ -124,7 +125,8 @@ export default function ContactList(props) {
         (contactListErrorBottomSheet as any).current.snapTo(1);
         return;
       } else {
-        getContact();
+        // TODO: Migrate it using react-native-contact
+        // getContact();
       }
     }
   };

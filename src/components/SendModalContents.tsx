@@ -15,7 +15,7 @@ import Fonts from "../common/Fonts";
 import { RFValue } from 'react-native-responsive-fontsize';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import FontAwesome from "react-native-vector-icons/FontAwesome"
-import Slider from "react-native-slider";
+import Slider from '@react-native-community/slider';
 
 export default function SendModalContents(props) {
     const [textContactNameRef, setTextContactNameRef] = useState(React.createRef());

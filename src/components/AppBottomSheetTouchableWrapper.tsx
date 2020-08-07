@@ -1,5 +1,5 @@
 import { TouchableOpacity, TouchableOpacityProps, Platform} from "react-native";
-import { TouchableOpacity as TouchableOpacityGestureHandler } from "react-native-gesture-handler";
+import { TouchableOpacity as TouchableOpacityGestureHandler } from "react-native";
 import React, { ReactNode } from "react";
 
 export const AppBottomSheetTouchableWrapper = (

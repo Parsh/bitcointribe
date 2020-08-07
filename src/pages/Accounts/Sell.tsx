@@ -21,7 +21,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Slider from 'react-native-slider';
+import Slider from '@react-native-community/slider';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   transferST1,

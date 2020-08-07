@@ -58,6 +58,7 @@ export default function SettingsContents(props) {
         {PageData.map((item) => {
           return (
             <AppBottomSheetTouchableWrapper
+              key={item.type}
               onPress={() => props.onPressManagePin(item.type, currencycode)}
               style={styles.selectedContactsView}
             >

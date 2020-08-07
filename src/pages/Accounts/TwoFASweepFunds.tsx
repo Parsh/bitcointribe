@@ -25,7 +25,7 @@ import BottomInfoBox from '../../components/BottomInfoBox';
 import { ScrollView } from 'react-native-gesture-handler';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { useDispatch, useSelector } from 'react-redux';
-import Slider from 'react-native-slider';
+import Slider from '@react-native-community/slider';
 import { clearTransfer, transferST1 } from '../../store/actions/accounts';
 import { SECURE_ACCOUNT } from '../../common/constants/serviceTypes';
 

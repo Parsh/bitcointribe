@@ -26,11 +26,8 @@ class App extends Component {
     super(props);
     firebase.analytics().setAnalyticsCollectionEnabled(true);
     this.NoInternetBottomSheet = React.createRef();
-  }
-
-  componentWillMount = () => {
     this.getAppVersion();
-  };
+  }
 
   getAppVersion = async () => {
     let version = await getVersion();

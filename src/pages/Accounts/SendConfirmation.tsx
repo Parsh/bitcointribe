@@ -33,7 +33,7 @@ import {
 } from '../../store/actions/accounts';
 import { UsNumberFormat } from '../../common/utilities';
 import BottomSheet from 'reanimated-bottom-sheet';
-import Slider from 'react-native-slider';
+import Slider from '@react-native-community/slider';
 import BottomInfoBox from '../../components/BottomInfoBox';
 import ModalHeader from '../../components/ModalHeader';
 import SendConfirmationContent from './SendConfirmationContent';
